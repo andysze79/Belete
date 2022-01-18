@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0206f1150b5474d4a95828923cf6fc82, type: 3}
+  m_Name: Note Book Page Library
+  m_EditorClassIdentifier: 
+  m_AllNoteBookPages:
+  - {fileID: 5299500724047929326, guid: 0f8c7b5e8152e1b459412762ce0b58b2, type: 3}
+  - {fileID: 6985952281317545916, guid: dc1a2f7268ca7e945b3dd045880e7e9c, type: 3}
+  - {fileID: 5821358054099365586, guid: 83a60cc73c1246b41a9616b0122069ba, type: 3}

@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 1828832081
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ae67995dbb27b1ac05a14371d273c412
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 8f6b29a815f40bd2f6a184802ee8e236
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 114
+  Script: {fileID: 11500000, guid: 8a8f9da291e56cf41aceea6c26c7f788, type: 3}
+- Class: 115
+  Script: {instanceID: 0}
+- Class: 213
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/BeleteAssets/ScriptableObj/ItemLibrary.asset
+Dependencies: []
