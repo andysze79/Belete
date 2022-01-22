@@ -14,8 +14,6 @@ public class InteractableSimple : MonoBehaviour, IInteractable
     [ReadOnly]public Flowchart m_FlowChart;
     [ReadOnly]public HighlightPlus.HighlightEffect m_HighLightEffect;
     [ReadOnly]public bool active;
-    [ReadOnly] [SerializeField]private float CDTime = 1.5f;
-    [ReadOnly] [SerializeField]private float HighLightGlow = 5f;
     public delegate void InteractableDel();
     public InteractableDel WhenInteract; 
     public delegate void InteractableSimpleDel(InteractableSimple interactable);
@@ -90,7 +88,7 @@ public class InteractableSimple : MonoBehaviour, IInteractable
         if (!active) return;
         if(m_InteractableType == InteractableType.UIObj) m_HighLightEffect.highlighted = true;
 
-        m_HighLightEffect.glow = HighLightGlow;
+        m_HighLightEffect.glow = Belete.GameManager.Instance.m_GlobalSettings.HighLightGlow;
         
         var mouseInput = Input.mousePosition;
         Belete.GameManager.Instance.m_UIManager.WhenHoverEnterInteractableObj(this, mouseInput);
@@ -172,7 +170,7 @@ public class InteractableSimple : MonoBehaviour, IInteractable
     private IEnumerator CoolDown()
     {
         m_FlowChart.enabled = false;
-        yield return new WaitForSeconds(CDTime);
+        yield return new WaitForSeconds(Belete.GameManager.Instance.m_GlobalSettings.InteractableFlowchartCDTime);
         m_FlowChart.enabled = true;        
     }
 }

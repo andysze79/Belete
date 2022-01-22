@@ -20,6 +20,7 @@ namespace Belete
         [FoldoutGroup("Asset Bundle Settings")] public ItemLibrary m_ItemLibrary;        
         [FoldoutGroup("Asset Bundle Settings")] public AudioLibrary m_AudioLibrary;
         [FoldoutGroup("Asset Bundle Settings")] public NoteBookPageLibrary m_NotebookPageLibrary;
+        public GlobalSettings m_GlobalSettings;
         public AudioManager m_AudioManager;
         public UIManager m_UIManager;
         public FlowchartExecutor m_FlowchartExecutor;

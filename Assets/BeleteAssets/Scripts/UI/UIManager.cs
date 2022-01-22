@@ -41,6 +41,8 @@ public class UIManager : MonoBehaviour, Belete.IGameStateEvent
     public delegate void UIChangeDel(Belete.GameManager.GameState state);
     public UIChangeDel WhenUIChange;
 
+    Coroutine GetPageProcess { get; set; }
+
     private void Awake()
     {
         TryGetComponent<UIOrganizer>(out m_UIOrganizer);
@@ -81,7 +83,10 @@ public class UIManager : MonoBehaviour, Belete.IGameStateEvent
 
         ShowGainPageNotification(page);
 
-        StartCoroutine(GetPageSequence(page));
+        if (GetPageProcess != null)
+            StopCoroutine(GetPageProcess);
+        
+        GetPageProcess = StartCoroutine(GetPageSequence(page));
     }
     private void ShowGainPageNotification(GameObject page)
     {
@@ -105,10 +110,10 @@ public class UIManager : MonoBehaviour, Belete.IGameStateEvent
         }
     }
     private IEnumerator GetPageSequence(GameObject page) {
+        m_NotebookUI.AddPage(page);
+
         yield return StartCoroutine(DelayTurnOffUI(m_GetPageUI, m_GetPageUIActiveTime));
 
-        m_NotebookUI.AddPage(page);
-        //m_NotebookUI.gameObject.SetActive(true);
         m_UIOrganizer.ActivateUILayerItem(UILayerData.OrganizerName.GameplayUI, m_NotebookUIIndex);
         m_NotebookUI.ShowPage(page.GetComponent<Page>().m_ListIndex);
     }
